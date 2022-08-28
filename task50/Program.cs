@@ -6,28 +6,31 @@
 
 17 -> такого числа в массиве нет */
 Random rand = new Random();
-Console.WriteLine("Введите m: ");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите n: ");
-int n = Convert.ToInt32(Console.ReadLine());
+int m = new Random().Next(0, 10);
+int n = new Random().Next(0, 10);
 int[,] matrix = new int [m, n];
-
 for (int i = 0; i < m; i++)
 {
     for (int j = 0; j < n; j++)
     {
-        matrix[i, j] = new Random().Next(-10, 10);
+        matrix[i, j] = new Random().Next(0, 10);
         Console.Write($"{matrix[i, j] + " "}");
     }
     Console.WriteLine();
 }
 Console.WriteLine("Введите a: ");
-int a = Convert.ToInt32(Console.ReadLine());
-if (matrix[i, j] = a)
+int a = Convert.ToInt32(Console.ReadLine()) - 1;
+Console.WriteLine("Введите b: ");
+int b = Convert.ToInt32(Console.ReadLine()) - 1;
+if (a+1 <= matrix.GetLength(0) && b+1 <= matrix.GetLength(1))
 {
-    Console.WriteLine("Заданное число в массиве есть");
+    int number = 0;
+    number = (matrix[a, b]);
+    Console.WriteLine($"Найденное число: {number}");
 }
 else
 {
-    Console.WriteLine("Заданного числа в массиве нет");
+Console.WriteLine("Такого элемента нет");
 }
+
+
